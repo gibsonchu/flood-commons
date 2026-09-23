@@ -1,0 +1,647 @@
+[
+  {
+    "id": "mechanism:rainfall",
+    "dimension": "mechanism",
+    "key": "rainfall",
+    "label": "Rainfall / stormwater",
+    "definition": "Rainfall accumulating or running off faster than drainage can remove it. Do not infer from a photograph alone.",
+    "aliases": [
+      "rain flooding",
+      "pluvial flooding",
+      "stormwater"
+    ],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "mechanism:coastal_surge",
+    "dimension": "mechanism",
+    "key": "coastal_surge",
+    "label": "Coastal storm surge",
+    "definition": "Coastal water pushed onto land by a storm; requires supporting attribution.",
+    "aliases": [
+      "storm surge",
+      "coastal flooding"
+    ],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "mechanism:tidal",
+    "dimension": "mechanism",
+    "key": "tidal",
+    "label": "Tidal flooding",
+    "definition": "High-tide inundation independent of a required named storm.",
+    "aliases": [
+      "sunny-day flooding",
+      "high-tide flooding"
+    ],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "mechanism:riverine",
+    "dimension": "mechanism",
+    "key": "riverine",
+    "label": "River flooding",
+    "definition": "A river or stream exceeding its channel capacity.",
+    "aliases": [
+      "fluvial flooding"
+    ],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "mechanism:groundwater",
+    "dimension": "mechanism",
+    "key": "groundwater",
+    "label": "Groundwater flooding",
+    "definition": "Water entering or rising above ground from a high water table.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "mechanism:sewer_backup",
+    "dimension": "mechanism",
+    "key": "sewer_backup",
+    "label": "Sewer backup",
+    "definition": "Sewage or combined-sewer water backing into property.",
+    "aliases": [
+      "backflow",
+      "sewage flooding"
+    ],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "mechanism:compound",
+    "dimension": "mechanism",
+    "key": "compound",
+    "label": "Compound flooding",
+    "definition": "An explicitly documented interaction of multiple flood mechanisms. Multiple tags alone do not prove interaction.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "mechanism:unspecified",
+    "dimension": "mechanism",
+    "key": "unspecified",
+    "label": "Mechanism not established",
+    "definition": "Cause is absent, broad, or not established by the source; never interpret as no flood.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "stage:understand",
+    "dimension": "stage",
+    "key": "understand",
+    "label": "Understand risk",
+    "definition": "Learn about hazards, history, observations, or evidence.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "stage:prepare",
+    "dimension": "stage",
+    "key": "prepare",
+    "label": "Prepare",
+    "definition": "Plan or take precautions before an event.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "stage:respond",
+    "dimension": "stage",
+    "key": "respond",
+    "label": "Respond",
+    "definition": "Find information or assistance during an event or its immediate effects.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "stage:recover",
+    "dimension": "stage",
+    "key": "recover",
+    "label": "Recover",
+    "definition": "Repair, obtain support, or address impacts after an event.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "stage:adapt",
+    "dimension": "stage",
+    "key": "adapt",
+    "label": "Adapt",
+    "definition": "Make longer-term changes to reduce exposure or vulnerability.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:preparedness",
+    "dimension": "topic",
+    "key": "preparedness",
+    "label": "Preparedness",
+    "definition": "Planning, supplies, and practical preparation.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:infrastructure",
+    "dimension": "topic",
+    "key": "infrastructure",
+    "label": "Infrastructure",
+    "definition": "Public systems and built works that affect flood management.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:planning",
+    "dimension": "topic",
+    "key": "planning",
+    "label": "Planning and policy",
+    "definition": "Policy frameworks, planning processes, and recommendations.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:risk_mapping",
+    "dimension": "topic",
+    "key": "risk_mapping",
+    "label": "Risk maps",
+    "definition": "Mapped hazard scenarios or explanatory mapping guidance.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:monitoring",
+    "dimension": "topic",
+    "key": "monitoring",
+    "label": "Flood monitoring",
+    "definition": "Sensors, measurement methods, and observations over time.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:observed_impacts",
+    "dimension": "topic",
+    "key": "observed_impacts",
+    "label": "Flood impacts",
+    "definition": "Reported or measured effects, including transportation and property disruption.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:housing",
+    "dimension": "topic",
+    "key": "housing",
+    "label": "Housing",
+    "definition": "Homes, living conditions, and housing support.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:community_organizing",
+    "dimension": "topic",
+    "key": "community_organizing",
+    "label": "Community organizing",
+    "definition": "Collective local participation in flood policy or action.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:building_protection",
+    "dimension": "topic",
+    "key": "building_protection",
+    "label": "Building protection",
+    "definition": "Property-level physical measures to reduce flood damage.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:drainage",
+    "dimension": "topic",
+    "key": "drainage",
+    "label": "Drainage",
+    "definition": "Sewers, catch basins, runoff conveyance, and storage.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:health",
+    "dimension": "topic",
+    "key": "health",
+    "label": "Health",
+    "definition": "Health impacts and health-related response or recovery resources.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:insurance",
+    "dimension": "topic",
+    "key": "insurance",
+    "label": "Insurance",
+    "definition": "Flood coverage information, counseling, and claim support.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:recovery",
+    "dimension": "topic",
+    "key": "recovery",
+    "label": "Recovery",
+    "definition": "Restoration and assistance after flood impacts.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:reporting",
+    "dimension": "topic",
+    "key": "reporting",
+    "label": "Report a problem",
+    "definition": "Channels to report conditions or damage; not an emergency response guarantee.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:transportation",
+    "dimension": "topic",
+    "key": "transportation",
+    "label": "Transportation",
+    "definition": "Roads, transit, tunnels, and travel disruption.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:legal_assistance",
+    "dimension": "topic",
+    "key": "legal_assistance",
+    "label": "Legal assistance",
+    "definition": "Legal information, referrals, or services; representation must be separately established.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:referrals",
+    "dimension": "topic",
+    "key": "referrals",
+    "label": "Referrals and navigation",
+    "definition": "Connecting a person to another provider or program.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:financial_assistance",
+    "dimension": "topic",
+    "key": "financial_assistance",
+    "label": "Financial assistance",
+    "definition": "Funding or financing; distinguish grants, loans, and insurance.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:relocation",
+    "dimension": "topic",
+    "key": "relocation",
+    "label": "Relocation",
+    "definition": "Moving from a flood-vulnerable or damaged home.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:alerts",
+    "dimension": "topic",
+    "key": "alerts",
+    "label": "Alerts",
+    "definition": "Subscriptions and notification services.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:training",
+    "dimension": "topic",
+    "key": "training",
+    "label": "Training and events",
+    "definition": "Preparedness education, workshops, and presentations.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:supplies",
+    "dimension": "topic",
+    "key": "supplies",
+    "label": "Supplies",
+    "definition": "Access to or instructions for physical preparedness materials.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:shelter",
+    "dimension": "topic",
+    "key": "shelter",
+    "label": "Shelter",
+    "definition": "Temporary shelter or referral after an emergency; a general program is not an open shelter.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:business_recovery",
+    "dimension": "topic",
+    "key": "business_recovery",
+    "label": "Business recovery",
+    "definition": "Recovery assistance intended for businesses or nonprofits.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:cleanup",
+    "dimension": "topic",
+    "key": "cleanup",
+    "label": "Cleanup",
+    "definition": "Post-flood cleaning, dewatering, or waste handling.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "topic:public_space",
+    "dimension": "topic",
+    "key": "public_space",
+    "label": "Public space",
+    "definition": "Parks and other shared outdoor spaces.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "audience:residents",
+    "dimension": "audience",
+    "key": "residents",
+    "label": "Residents",
+    "definition": "People living in an affected or relevant area.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "audience:renters",
+    "dimension": "audience",
+    "key": "renters",
+    "label": "Renters",
+    "definition": "Tenants seeking housing or flood resources.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "audience:homeowners",
+    "dimension": "audience",
+    "key": "homeowners",
+    "label": "Homeowners",
+    "definition": "Owners seeking resources for their homes.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "audience:businesses",
+    "dimension": "audience",
+    "key": "businesses",
+    "label": "Businesses",
+    "definition": "Businesses and nonprofit operators.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "audience:community_groups",
+    "dimension": "audience",
+    "key": "community_groups",
+    "label": "Community groups",
+    "definition": "Local organizations, organizers, and civic groups.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "audience:researchers",
+    "dimension": "audience",
+    "key": "researchers",
+    "label": "Researchers",
+    "definition": "People analyzing flood evidence or methods.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "audience:public_agencies",
+    "dimension": "audience",
+    "key": "public_agencies",
+    "label": "Public agencies",
+    "definition": "Government planning, operations, and service teams.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:listed_contact_provider",
+    "dimension": "availability",
+    "key": "listed_contact_provider",
+    "label": "Listed; contact provider",
+    "definition": "Service is documented online. Actual capacity and individual eligibility are unconfirmed.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:expression_of_interest",
+    "dimension": "availability",
+    "key": "expression_of_interest",
+    "label": "Expression of interest",
+    "definition": "An interest-collection route exists; it is not an assistance application.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:intake_unconfirmed",
+    "dimension": "availability",
+    "key": "intake_unconfirmed",
+    "label": "Current intake unconfirmed",
+    "definition": "Historical or ambiguous program information requires provider confirmation.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:request_subject_to_capacity",
+    "dimension": "availability",
+    "key": "request_subject_to_capacity",
+    "label": "Request subject to capacity",
+    "definition": "Requests may be submitted; fulfillment or scheduling is not established.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:event_dependent",
+    "dimension": "availability",
+    "key": "event_dependent",
+    "label": "Depends on scheduled event",
+    "definition": "Availability depends on an event date, registration, or inventory.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:deadline_listed",
+    "dimension": "availability",
+    "key": "deadline_listed",
+    "label": "Deadline listed; verify eligibility",
+    "definition": "A source gives a deadline. Declaration scope and actual intake still need checking.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:historical",
+    "dimension": "availability",
+    "key": "historical",
+    "label": "Historical program",
+    "definition": "Retained for history and excluded from current-help results.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:confirmed_available",
+    "dimension": "availability",
+    "key": "confirmed_available",
+    "label": "Provider confirmed availability",
+    "definition": "Requires dated direct provider confirmation, scope, and next-review date.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:temporarily_unavailable",
+    "dimension": "availability",
+    "key": "temporarily_unavailable",
+    "label": "Temporarily unavailable",
+    "definition": "Provider has documented temporary closure or pause.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "availability:closed",
+    "dimension": "availability",
+    "key": "closed",
+    "label": "Closed",
+    "definition": "Provider has documented closure or expired enrollment.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "evidence_kind:modeled",
+    "dimension": "evidence_kind",
+    "key": "modeled",
+    "label": "Modeled scenario",
+    "definition": "A simulation, prediction, or model output; not a direct observation.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "evidence_kind:instrument_observation",
+    "dimension": "evidence_kind",
+    "key": "instrument_observation",
+    "label": "Instrument observation",
+    "definition": "Instrument measurements, subject to sensor location and quality limitations.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "evidence_kind:impact_analysis",
+    "dimension": "evidence_kind",
+    "key": "impact_analysis",
+    "label": "Impact analysis",
+    "definition": "An analytical synthesis of impacts with its own method and limitations.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "evidence_kind:photograph",
+    "dimension": "evidence_kind",
+    "key": "photograph",
+    "label": "Photograph",
+    "definition": "A source-described photo; capture location, date, and depiction require review.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "evidence_kind:satellite_explainer",
+    "dimension": "evidence_kind",
+    "key": "satellite_explainer",
+    "label": "Satellite explainer",
+    "definition": "Satellite-based animation or explanatory video; resolution and narration constrain interpretation.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "evidence_kind:historical_map",
+    "dimension": "evidence_kind",
+    "key": "historical_map",
+    "label": "Historical map",
+    "definition": "A map with time-specific information, not evidence of current services.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  },
+  {
+    "id": "evidence_kind:instructional",
+    "dimension": "evidence_kind",
+    "key": "instructional",
+    "label": "Instructional material",
+    "definition": "Educational media demonstrating a process or equipment.",
+    "aliases": [],
+    "version": "0.1.0",
+    "status": "proposed"
+  }
+]

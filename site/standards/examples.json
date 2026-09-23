@@ -1,0 +1,224 @@
+[
+  {
+    "id": "urn:uuid:11111111-1111-4111-8111-111111111111",
+    "local_id": "EXAMPLE-FRS",
+    "standard": "FRS",
+    "schema_version": "0.1.0",
+    "publisher": {
+      "id": "https://example.org/publishers/community",
+      "name": "Example Community Publisher"
+    },
+    "title": "Example flood recovery guide",
+    "summary": "Illustrative schema example only. This is not a real resource, observation, or available service.",
+    "categories": [
+      "preparedness",
+      "infrastructure"
+    ],
+    "tags": [],
+    "action_stages": [
+      "prepare",
+      "respond",
+      "recover"
+    ],
+    "audiences": [
+      "residents"
+    ],
+    "languages": [
+      "en"
+    ],
+    "places": [
+      {
+        "id": "example-area",
+        "name": "Example neighborhood",
+        "relation": "covers",
+        "precision": "named_area",
+        "geometry": null
+      }
+    ],
+    "event": null,
+    "source": {
+      "url": "https://example.org/frs",
+      "organization": "Example organization",
+      "checked_at": null,
+      "evidence_status": "unknown"
+    },
+    "rights": {
+      "status": "not_assessed",
+      "license": null,
+      "license_url": null,
+      "attribution": null
+    },
+    "verification": {
+      "status": "unreviewed",
+      "method": null,
+      "verified_at": null
+    },
+    "relationships": [],
+    "metadata": {
+      "created_at": "2026-09-22T02:24:29.332101+00:00",
+      "updated_at": "2026-09-22T02:24:29.332101+00:00",
+      "record_version": 1
+    },
+    "resource": {
+      "type": "action_plan",
+      "publication_date": null,
+      "publication_date_text": null,
+      "evidence_kind": null,
+      "document_url": "https://example.org/guide"
+    }
+  },
+  {
+    "id": "urn:uuid:22222222-2222-4222-8222-222222222222",
+    "local_id": "EXAMPLE-FMS",
+    "standard": "FMS",
+    "schema_version": "0.1.0",
+    "publisher": {
+      "id": "https://example.org/publishers/community",
+      "name": "Example Community Publisher"
+    },
+    "title": "Example resident flood observation",
+    "summary": "Illustrative schema example only. This is not a real resource, observation, or available service.",
+    "categories": [
+      "cleanup",
+      "housing"
+    ],
+    "tags": [],
+    "action_stages": [
+      "understand"
+    ],
+    "audiences": [
+      "residents"
+    ],
+    "languages": [
+      "en"
+    ],
+    "places": [
+      {
+        "id": "example-area",
+        "name": "Example neighborhood",
+        "relation": "covers",
+        "precision": "named_area",
+        "geometry": null
+      }
+    ],
+    "event": null,
+    "source": {
+      "url": "https://example.org/fms",
+      "organization": "Example organization",
+      "checked_at": null,
+      "evidence_status": "unknown"
+    },
+    "rights": {
+      "status": "not_assessed",
+      "license": null,
+      "license_url": null,
+      "attribution": null
+    },
+    "verification": {
+      "status": "unreviewed",
+      "method": null,
+      "verified_at": null
+    },
+    "relationships": [],
+    "metadata": {
+      "created_at": "2026-09-22T02:24:29.332101+00:00",
+      "updated_at": "2026-09-22T02:24:29.332101+00:00",
+      "record_version": 1
+    },
+    "media": {
+      "type": "observation",
+      "creator": null,
+      "capture_date": null,
+      "capture_date_text": null,
+      "asset_url": null,
+      "alt_text": null,
+      "duration_seconds": null,
+      "evidence_kind": "resident_report",
+      "observation": {
+        "observed_at": null,
+        "description": "Illustrative report of standing water; not a measured depth.",
+        "flood_depth_cm": null,
+        "damage_classification": "unknown"
+      }
+    }
+  },
+  {
+    "id": "urn:uuid:33333333-3333-4333-8333-333333333333",
+    "local_id": "EXAMPLE-FSS",
+    "standard": "FSS",
+    "schema_version": "0.1.0",
+    "publisher": {
+      "id": "https://example.org/publishers/community",
+      "name": "Example Community Publisher"
+    },
+    "title": "Example cleanup support service",
+    "summary": "Illustrative schema example only. This is not a real resource, observation, or available service.",
+    "categories": [
+      "reporting",
+      "drainage"
+    ],
+    "tags": [],
+    "action_stages": [
+      "respond"
+    ],
+    "audiences": [
+      "residents"
+    ],
+    "languages": [
+      "en"
+    ],
+    "places": [
+      {
+        "id": "example-area",
+        "name": "Example neighborhood",
+        "relation": "covers",
+        "precision": "named_area",
+        "geometry": null
+      }
+    ],
+    "event": null,
+    "source": {
+      "url": "https://example.org/fss",
+      "organization": "Example organization",
+      "checked_at": null,
+      "evidence_status": "unknown"
+    },
+    "rights": {
+      "status": "not_assessed",
+      "license": null,
+      "license_url": null,
+      "attribution": null
+    },
+    "verification": {
+      "status": "unreviewed",
+      "method": null,
+      "verified_at": null
+    },
+    "relationships": [],
+    "metadata": {
+      "created_at": "2026-09-22T02:24:29.332101+00:00",
+      "updated_at": "2026-09-22T02:24:29.332101+00:00",
+      "record_version": 1
+    },
+    "service": {
+      "service_area": "Example neighborhood",
+      "eligibility": "Illustrative only",
+      "availability": "intake_unconfirmed",
+      "contact_url": "https://example.org/contact",
+      "phone": null,
+      "email": null,
+      "cost": null,
+      "hours": null,
+      "deadline": null,
+      "accessibility": null,
+      "provider": {
+        "id": "https://example.org/providers/community",
+        "name": "Example community organization"
+      },
+      "type": "reporting",
+      "languages": [],
+      "provider_confirmed_at": null,
+      "review_due": null
+    }
+  }
+]

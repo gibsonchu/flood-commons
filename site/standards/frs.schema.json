@@ -1,0 +1,407 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/gibsonchu/flood-commons/raw/main/standards/frs.schema.json",
+  "title": "FRS 0.1.0 \u2014 Draft",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^urn:uuid:[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+      "description": "Globally portable record identity. Preserve across publishers and revisions."
+    },
+    "local_id": {
+      "type": "string",
+      "description": "Publisher-local identifier, retained when migrating the pilot."
+    },
+    "standard": {
+      "const": "FRS"
+    },
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "publisher": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "format": "uri"
+        },
+        "name": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name"
+      ],
+      "additionalProperties": false
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "categories": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "description": "Controlled taxonomy term key."
+      },
+      "uniqueItems": true
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "action_stages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "audiences": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "places": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "relation": {
+            "enum": [
+              "covers",
+              "depicts",
+              "serves",
+              "observed_at"
+            ]
+          },
+          "precision": {
+            "enum": [
+              "named_area",
+              "exact",
+              "approximate",
+              "unknown"
+            ]
+          },
+          "geometry": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "const": "Point"
+                  },
+                  "coordinates": {
+                    "type": "array",
+                    "prefixItems": [
+                      {
+                        "type": "number",
+                        "minimum": -180,
+                        "maximum": 180
+                      },
+                      {
+                        "type": "number",
+                        "minimum": -90,
+                        "maximum": 90
+                      }
+                    ],
+                    "minItems": 2,
+                    "maxItems": 2
+                  }
+                },
+                "required": [
+                  "type",
+                  "coordinates"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "relation",
+          "precision",
+          "geometry"
+        ],
+        "additionalProperties": false
+      },
+      "uniqueItems": true
+    },
+    "event": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "name": {
+              "type": "string"
+            },
+            "date_text": {
+              "type": "string",
+              "description": "Qualified date text, not an invented exact timestamp."
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "date_text"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "properties": {
+        "url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "organization": {
+          "type": "string"
+        },
+        "checked_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "evidence_status": {
+          "enum": [
+            "website_documented",
+            "index_only",
+            "provider_confirmed",
+            "unknown"
+          ]
+        }
+      },
+      "required": [
+        "url",
+        "organization",
+        "checked_at",
+        "evidence_status"
+      ],
+      "additionalProperties": false
+    },
+    "rights": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "not_assessed",
+            "license_reported",
+            "needs_review",
+            "cleared"
+          ]
+        },
+        "license": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "license_url": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "uri",
+          "pattern": "^https?://"
+        },
+        "attribution": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "status",
+        "license",
+        "license_url",
+        "attribution"
+      ],
+      "additionalProperties": false
+    },
+    "verification": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "enum": [
+            "unreviewed",
+            "source_checked",
+            "reviewed",
+            "disputed"
+          ]
+        },
+        "method": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "verified_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        }
+      },
+      "required": [
+        "status",
+        "method",
+        "verified_at"
+      ],
+      "additionalProperties": false
+    },
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "target_id": {
+            "type": "string",
+            "format": "uri"
+          },
+          "relation": {
+            "type": "string",
+            "description": "Typed association; shared event does not establish causation."
+          }
+        },
+        "required": [
+          "target_id",
+          "relation"
+        ],
+        "additionalProperties": false
+      },
+      "uniqueItems": true
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "record_version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "required": [
+        "created_at",
+        "updated_at",
+        "record_version"
+      ],
+      "additionalProperties": false
+    },
+    "resource": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "publication_date": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "publication_date_text": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "evidence_kind": {
+          "enum": [
+            null,
+            "modeled",
+            "instrument_observation",
+            "impact_analysis",
+            "instructional"
+          ]
+        },
+        "document_url": {
+          "type": "string",
+          "format": "uri",
+          "pattern": "^https?://"
+        }
+      },
+      "required": [
+        "type",
+        "publication_date",
+        "publication_date_text",
+        "evidence_kind",
+        "document_url"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "id",
+    "local_id",
+    "standard",
+    "schema_version",
+    "publisher",
+    "title",
+    "summary",
+    "categories",
+    "tags",
+    "action_stages",
+    "audiences",
+    "languages",
+    "places",
+    "event",
+    "source",
+    "rights",
+    "verification",
+    "relationships",
+    "metadata",
+    "resource"
+  ],
+  "additionalProperties": false
+}
