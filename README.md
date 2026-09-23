@@ -2,6 +2,8 @@
 
 Open-source data infrastructure for flood resilience, founded and stewarded by **Floodline**.
 
+**[Browse the live example catalog](https://flood-commons.vercel.app)** — three synthetic records demonstrating FRS, FMS, and FSS. They are not real resources, observations, or available services.
+
 Flood Commons defines practical ways to organize, publish, and exchange flood information. **Blue Dots** is a community-facing Floodline product that can consume this data. Governments, researchers, community groups, organizations, and developers can implement the specifications independently.
 
 ## Three draft standards
