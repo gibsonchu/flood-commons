@@ -1,6 +1,6 @@
 # Supabase reference implementation
 
-This is a pilot editorial catalog, not a canonical-document ingestion API yet. Apply `001` through `006` in order to a **new Supabase project** using migrations. Do not run the baseline on an existing Flood Commons installation. Supabase Auth and the `pg_jsonschema` extension are required. The SQL installs its bundled draft schemas; the JSON files in `standards/` describe interchange documents.
+This is a pilot editorial catalog, not a canonical-document ingestion API yet. Apply `001` through `007` in order to a **new Supabase project** using migrations. Do not run the baseline on an existing Flood Commons installation. Supabase Auth and the `pg_jsonschema` extension are required. The SQL installs its bundled draft schemas; the JSON files in `standards/` describe interchange documents.
 
 Keep `fc_private` out of the Data API's exposed schemas. Only `public` is exposed. Public reads use `fc_records` and return reviewed standard documents. `fc_current_catalog` also excludes closed, historical, temporarily unavailable, and expired help listings. Raw catalog writes are denied. Drafts are scoped to authenticated members, and publication requires an editor or administrator.
 
@@ -19,3 +19,10 @@ Hosted media and coordinate publication are disabled in this pilot. Public relat
 - **Verification is not overwritten on publication.** Each record keeps its own `verification` block, so an unreviewed record is never presented as reviewed.
 - **`fc_private.propose_standard(doc, scope, audience, review_owner)`** accepts a standard FRS/FSS/FMS document and builds the editorial envelope that `propose` and the consistency triggers expect. Publication still goes through `fc_review`.
 - The pilot's temporary research drafts were excluded, not deleted.
+
+## 007: resident flood clips
+
+- **Submitting:** anyone may submit a link to flood footage posted elsewhere (`public.fc_submit_clip`). Submissions wait in a private inbox (`fc_clip_inbox`, readable by members only) until an editor approves (`fc_approve_clip`) or rejects (`fc_reject_clip`) them. Approval builds and publishes a public FMS record marked `source_checked`.
+- **Link-only media:** clips link to and embed the original post, credited to its creator. Nothing is copied or hosted.
+- **Locations:** map points are published only for clips of streets, highways, and subways, rounded to a 0.0005° grid (about 50 m). The location guard now enforces this for every published record; exact points are never published. Clips of anywhere else get a neighborhood name only.
+- **Removal:** anyone may ask for a published record to be taken down (`fc_request_removal`). Editors resolve requests with `fc_resolve_removal` (`remove` archives the record).
