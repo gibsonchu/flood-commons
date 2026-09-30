@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Flood Commons Workspace</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='5' fill='%23092539'/%3E%3Cpath d='M6 10h20M6 16h14M6 22h20' stroke='%2365ddd0' stroke-width='3'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="/workspace/workspace.css">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="./"><span class="mark" aria-hidden="true">≋</span><span>Flood Commons</span><span class="badge">Workspace</span></a>
+  <div class="who" id="who" hidden>
+    <a href="https://flooding-local-help.vercel.app/" target="_blank" rel="noreferrer">Local Help ↗</a>
+    <a href="https://flood-clips.vercel.app/" target="_blank" rel="noreferrer">Flood Clips ↗</a>
+    <span><strong id="me"></strong> <span class="role" id="myRole"></span></span>
+    <button type="button" class="link-btn" id="sign-out">Sign out</button>
+  </div>
+</header>
+
+<section id="login" class="login" hidden>
+  <div class="login-card">
+    <h1>Sign in</h1>
+    <p>Manage what Flood Commons publishes to Local Help, Flood Clips, and the Blue Dots AI.</p>
+    <form id="password-form">
+      <label>Email<input name="email" type="email" autocomplete="username" required></label>
+      <label>Password<input name="password" type="password" autocomplete="current-password" required></label>
+      <button class="btn primary" type="submit">Sign in</button>
+    </form>
+    <div class="or"><span>or</span></div>
+    <form id="link-form">
+      <p class="fine">No password? We'll email you a sign-in link.</p>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <div class="row"><button class="btn" type="submit" name="kind" value="magic">Email me a sign-in link</button><button class="link-btn" type="submit" name="kind" value="reset">Forgot password?</button></div>
+    </form>
+    <p class="form-msg" id="login-msg" role="status"></p>
+  </div>
+</section>
+
+<section id="set-password" class="login" hidden>
+  <form class="login-card" id="new-password-form">
+    <h1>Choose a new password</h1>
+    <label>New password<input name="password" type="password" autocomplete="new-password" minlength="10" required></label>
+    <button class="btn primary" type="submit">Save password</button>
+    <p class="form-msg" role="status"></p>
+  </form>
+</section>
+
+<section id="not-member" class="login" hidden>
+  <div class="login-card">
+    <h1>You're signed in, but not a member yet</h1>
+    <p>Ask a Flood Commons admin to add <strong id="nm-email"></strong> in the Workspace under <em>People</em>. Then sign out and back in.</p>
+    <button class="btn" type="button" id="nm-out">Sign out</button>
+  </div>
+</section>
+
+<main id="app" class="main" hidden>
+  <nav class="tabs" aria-label="Workspace sections">
+    <button data-view="FSS">Services <span class="count" id="c-FSS"></span></button>
+    <button data-view="FRS">Answers &amp; resources <span class="count" id="c-FRS"></span></button>
+    <button data-view="FMS">Clips <span class="count" id="c-FMS"></span></button>
+    <button data-view="inbox">Clip inbox <span class="count alert" id="c-inbox"></span></button>
+    <button data-view="removals">Removal requests <span class="count alert" id="c-removals"></span></button>
+    <button data-view="import">Upload CSV</button>
+    <button data-view="trash">Trash <span class="count" id="c-trash"></span></button>
+    <button data-view="people" data-admin hidden>People</button>
+    <button data-view="log">Activity</button>
+  </nav>
+  <div id="flash" class="flash" role="status" hidden></div>
+  <div id="view"></div>
+</main>
+
+<dialog id="editor" aria-labelledby="editor-title">
+  <form id="editor-form" novalidate>
+    <div class="editor-head">
+      <h2 id="editor-title">Edit</h2>
+      <button type="button" class="icon-btn" data-close aria-label="Close">×</button>
+    </div>
+    <div class="editor-body" id="editor-body"></div>
+    <div class="editor-foot">
+      <p class="form-error" id="editor-error" role="alert"></p>
+      <button type="button" class="btn" data-close>Cancel</button>
+      <button type="submit" class="btn primary" id="editor-save">Save</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+<script type="module" src="/workspace/workspace.js"></script>
+</body>
+</html>

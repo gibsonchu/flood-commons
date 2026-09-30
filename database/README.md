@@ -1,6 +1,6 @@
 # Supabase reference implementation
 
-This is a pilot editorial catalog, not a canonical-document ingestion API yet. Apply `001` through `007` in order to a **new Supabase project** using migrations. Do not run the baseline on an existing Flood Commons installation. Supabase Auth and the `pg_jsonschema` extension are required. The SQL installs its bundled draft schemas; the JSON files in `standards/` describe interchange documents.
+This is a pilot editorial catalog, not a canonical-document ingestion API yet. Apply `001` through `008` in order to a **new Supabase project** using migrations. Do not run the baseline on an existing Flood Commons installation. Supabase Auth and the `pg_jsonschema` extension are required. The SQL installs its bundled draft schemas; the JSON files in `standards/` describe interchange documents.
 
 Keep `fc_private` out of the Data API's exposed schemas. Only `public` is exposed. Public reads use `fc_records` and return reviewed standard documents. `fc_current_catalog` also excludes closed, historical, temporarily unavailable, and expired help listings. Raw catalog writes are denied. Drafts are scoped to authenticated members, and publication requires an editor or administrator.
 
@@ -26,3 +26,13 @@ Hosted media and coordinate publication are disabled in this pilot. Public relat
 - **Link-only media:** clips link to and embed the original post, credited to its creator. Nothing is copied or hosted.
 - **Locations:** map points are published only for clips of streets, highways, and subways, rounded to a 0.0005° grid (about 50 m). The location guard now enforces this for every published record; exact points are never published. Clips of anywhere else get a neighborhood name only.
 - **Removal:** anyone may ask for a published record to be taken down (`fc_request_removal`). Editors resolve requests with `fc_resolve_removal` (`remove` archives the record).
+
+## 008: Workspace entry points
+
+- `fc_workspace_records`: every record in the caller's scope with its latest standard document, status, and audience.
+- `fc_save_record(doc, target, audience, expected_revision)` saves a standard document and sets its status in one step. It refuses to overwrite a newer save (`expected_revision` is the revision the editor opened). Contributors can save drafts; only editors change what's public.
+- `fc_import_records(items, filename)` saves many at once, all-or-nothing.
+- `fc_set_record_status(record, published|draft|hidden|trash|restore)`, `fc_set_audience(record, public|internal)`.
+- People (admins): `fc_members`, `fc_add_member(email, role)` (joins on first sign-in if they have no account yet), `fc_update_member`, `fc_remove_pending_member`.
+- `fc_activity(max_rows)`: who did what, newest first.
+- The pilot research drafts are marked `retired`, which keeps them out of the Workspace; they stay in history.

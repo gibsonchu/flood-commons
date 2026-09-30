@@ -49,3 +49,9 @@ A document about a program belongs in FRS; a concrete service/intake offering be
 ## Licensing
 
 Original code, JSON schemas, and synthetic examples are available under [MIT](LICENSE). Original prose documentation is [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) (attribute “Flood Commons contributors”). Third-party records and media retain their own rights. No software or specification license here grants rights to reuse third-party photographs, videos, source documents, or logos.
+
+## Workspace
+
+`site/workspace/` (served at `/workspace/`) is where Flood Commons members manage records: services and answers & resources (add, edit, publish, hide, trash, Public or AI-only), CSV upload with a dry-run preview, the Flood Clips submission inbox, removal requests, people (admins), and activity. Everyone signs in with their own account; the database's access rules decide what each person can do. The page uses only the publishable key in `site/config.json`.
+
+Deploy the site with `npx vercel --prod` from `site/`.
